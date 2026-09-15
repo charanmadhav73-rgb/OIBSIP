@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OIBSIP Projects</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .label {
+            color: #6366f1;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #6366f1;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #4f46e5;
+        }
+
+        footer {
+            margin-top: 35px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p class="label">
+            OASIS INFOBYTE • WEB DEVELOPMENT & DESIGNING
+        </p>
+
+        <h1>My Projects</h1>
+
+        <p class="subtitle">
+            Welcome to my internship project collection.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>Learnova Landing Page</h2>
+
+                <p>
+                    A responsive online learning platform landing page
+                    built with HTML5 and CSS3.
+                </p>
+
+                <a class="btn" href="./Learnova/">
+                    View Learnova →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Personal Portfolio</h2>
+
+                <p>
+                    A responsive personal portfolio showcasing my
+                    skills, projects and learning journey.
+                </p>
+
+                <a class="btn" href="./WebDev-L1-PersonalPortfolio/">
+                    View Portfolio →
+                </a>
+            </div>
+
+        </div>
+
+        <footer>
+            © 2026 Kallagunta Charanmadhav
+        </footer>
+
+    </div>
+
+</body>
+</html>
