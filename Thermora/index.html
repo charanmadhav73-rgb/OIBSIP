@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THERMORA | Temperature Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="brand">
+            <div class="brand-mark">T</div>
+            <div>
+                <strong>THERMORA</strong>
+                <small>Temperature Intelligence</small>
+            </div>
+        </div>
+        <div class="nav-badge">
+            ● ENGINE ONLINE
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-text">
+            <p class="eyebrow">CONVERT • ANALYZE • COMPARE</p>
+            <h1>Temperature,<br><span>understood.</span></h1>
+            <p>
+                A precision temperature intelligence workspace that converts values, explains their meaning, 
+                compares measurements and reveals the mathematics behind every result.
+            </p>
+        </div>
+
+        <div class="temperature-orb" id="temperatureOrb">
+            <div class="orb-ring"></div>
+            <div class="orb-core">
+                <span>🌡️</span>
+                <strong id="orbValue">37</strong>
+                <small id="orbUnit">°C</small>
+            </div>
+        </div>
+    </header>
+
+    <!-- MODE NAVIGATION & WORKSPACE -->
+    <section class="workspace">
+        <div class="mode-tabs">
+            <button class="mode-tab active" data-mode="convert">Convert</button>
+            <button class="mode-tab" data-mode="compare">Compare</button>
+            <button class="mode-tab" data-mode="analyze">Analyze</button>
+            <button class="mode-tab" data-mode="formula">Formula Lab</button>
+            <button class="mode-tab" data-mode="history">History</button>
+        </div>
+
+        <!-- CONVERT MODE -->
+        <div class="mode-panel active" id="convertPanel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">PRECISION CONVERSION</p>
+                    <h2>Convert temperature</h2>
+                </div>
+                <span class="live-badge">LIVE</span>
+            </div>
+
+            <div class="conversion-layout">
+                <div class="input-column">
+                    <label for="temperatureInput">TEMPERATURE</label>
+                    <input type="number" id="temperatureInput" value="37" step="any" placeholder="Enter value">
+
+                    <div class="unit-row">
+                        <div class="field">
+                            <label for="fromUnit">FROM</label>
+                            <select id="fromUnit">
+                                <option value="celsius">Celsius (°C)</option>
+                                <option value="fahrenheit">Fahrenheit (°F)</option>
+                                <option value="kelvin">Kelvin (K)</option>
+                                <option value="rankine">Rankine (°R)</option>
+                                <option value="reaumur">Réaumur (°Ré)</option>
+                                <option value="delisle">Delisle (°De)</option>
+                                <option value="newton">Newton (°N)</option>
+                            </select>
+                        </div>
+
+                        <button class="swap-button" id="swapButton" title="Swap units">⇄</button>
+
+                        <div class="field">
+                            <label for="toUnit">TO</label>
+                            <select id="toUnit">
+                                <option value="fahrenheit">Fahrenheit (°F)</option>
+                                <option value="celsius">Celsius (°C)</option>
+                                <option value="kelvin">Kelvin (K)</option>
+                                <option value="rankine">Rankine (°R)</option>
+                                <option value="reaumur">Réaumur (°Ré)</option>
+                                <option value="delisle">Delisle (°De)</option>
+                                <option value="newton">Newton (°N)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-row">
+                        <button class="primary-button" id="convertButton">CONVERT <span>→</span></button>
+                        <button class="secondary-button" id="clearButton">Clear</button>
+                    </div>
+                </div>
+
+                <div class="result-column">
+                    <p>CONVERTED RESULT</p>
+                    <div class="big-result">
+                        <strong id="resultValue">98.60</strong>
+                        <span id="resultUnit">°F</span>
+                    </div>
+                    <button class="copy-button" id="copyButton">📋 Copy Result</button>
+                    <div class="error-message" id="errorMessage"></div>
+                </div>
+            </div>
+
+            <div class="all-results">
+                <div class="sub-heading">ALL TEMPERATURE SCALES</div>
+                <div class="unit-grid" id="unitGrid"></div>
+            </div>
+        </div>
+
+        <!-- COMPARE MODE -->
+        <div class="mode-panel" id="comparePanel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">TEMPERATURE DIFFERENCE</p>
+                    <h2>Compare two values</h2>
+                </div>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-input">
+                    <label for="compareA">TEMPERATURE A (°C)</label>
+                    <input type="number" id="compareA" value="20" step="any">
+                </div>
+                <div class="compare-input">
+                    <label for="compareB">TEMPERATURE B (°C)</label>
+                    <input type="number" id="compareB" value="35" step="any">
+                </div>
+            </div>
+
+            <div class="comparison-result">
+                <div class="difference-number">
+                    <span id="differenceValue">+15</span>
+                    <small>°C difference</small>
+                </div>
+                <div>
+                    <h3 id="comparisonTitle">B is warmer</h3>
+                    <p id="comparisonText">Temperature B is 15°C warmer than temperature A.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANALYZE MODE -->
+        <div class="mode-panel" id="analyzePanel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">INTELLIGENCE ENGINE</p>
+                    <h2>Understand the number</h2>
+                </div>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-main">
+                    <span class="analysis-icon">✦</span>
+                    <p class="eyebrow">CURRENT CLASSIFICATION</p>
+                    <h2 id="analysisTitle">Warm</h2>
+                    <p id="analysisDescription">This temperature is noticeably warm compared with ordinary indoor conditions.</p>
+                </div>
+
+                <div class="analysis-facts">
+                    <div class="fact">
+                        <span>Temperature</span>
+                        <strong id="analysisTemperature">37°C</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Zone</span>
+                        <strong id="analysisZone">Warm</strong>
+                    </div>
+                    <div class="fact">
+                        <span>Scale Position</span>
+                        <strong id="analysisPosition">47%</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reference-strip">
+                <div><span>🧊</span><strong>0°C</strong><small>Freezing</small></div>
+                <div><span>🏠</span><strong>20°C</strong><small>Cool room</small></div>
+                <div><span>🌡️</span><strong>37°C</strong><small>Body reference</small></div>
+                <div><span>♨️</span><strong>100°C</strong><small>Boiling</small></div>
+            </div>
+        </div>
+
+        <!-- FORMULA LAB -->
+        <div class="mode-panel" id="formulaPanel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">MATHEMATICAL ENGINE</p>
+                    <h2>Formula Lab</h2>
+                </div>
+            </div>
+
+            <div class="formula-card">
+                <div class="formula-header">
+                    <span id="formulaName">Celsius → Fahrenheit</span>
+                    <span>PRECISION MODE</span>
+                </div>
+                <div class="formula-expression" id="formulaExpression">°F = (°C × 9/5) + 32</div>
+                <div class="formula-calculation" id="formulaCalculation">(37 × 9/5) + 32 = 98.60°F</div>
+                <p class="formula-note">
+                    THERMORA converts through a common Celsius reference internally. This allows different temperature scales to be compared using one calculation engine.
+                </p>
+            </div>
+        </div>
+
+        <!-- HISTORY -->
+        <div class="mode-panel" id="historyPanel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">LOCAL STORAGE</p>
+                    <h2>Conversion history</h2>
+                </div>
+                <button class="secondary-button" id="clearHistoryButton">Clear History</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="empty-history">Your conversions will appear here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL SCALE -->
+    <section class="scale-section">
+        <div class="section-heading">
+            <p class="eyebrow">VISUAL CONTEXT</p>
+            <h2>Where does your temperature sit?</h2>
+        </div>
+        <div class="temperature-scale">
+            <div class="scale-gradient"></div>
+            <div class="scale-indicator" id="scaleIndicator">
+                <strong id="scaleValue">37°C</strong>
+            </div>
+            <div class="scale-labels">
+                <span class="scale-label scale-label-min" style="left: 0%;"><strong>-20°C</strong> Extreme cold</span>
+                <span class="scale-label" style="left: 16.67%;"><strong>0°C</strong> Freezing</span>
+                <span class="scale-label" style="left: 33.33%;"><strong>20°C</strong> Mild</span>
+                <span class="scale-label" style="left: 47.5%;"><strong>37°C</strong> Warm</span>
+                <span class="scale-label scale-label-max" style="left: 100%;"><strong>100°C</strong> Boiling</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="section-heading">
+            <p class="eyebrow">WHY THERMORA</p>
+            <h2>A converter with a brain.</h2>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card"><span>01</span><h3>Multi-scale engine</h3><p>Seven temperature scales powered by one consistent conversion system.</p></article>
+            <article class="feature-card"><span>02</span><h3>Context engine</h3><p>Values are classified into meaningful temperature zones.</p></article>
+            <article class="feature-card"><span>03</span><h3>Comparison engine</h3><p>Instantly understand the difference between two measurements.</p></article>
+            <article class="feature-card"><span>04</span><h3>Formula transparency</h3><p>See the mathematical process behind every conversion.</p></article>
+            <article class="feature-card"><span>05</span><h3>Local history</h3><p>Previous conversions are stored in your browser for quick reference.</p></article>
+            <article class="feature-card"><span>06</span><h3>Input intelligence</h3><p>Invalid and physically impossible values are detected before calculation.</p></article>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="brand">
+            <div class="brand-mark">T</div>
+            <div><strong>THERMORA</strong><small>Temperature Intelligence</small></div>
+        </div>
+        <p>Built as a front-end temperature intelligence project • 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

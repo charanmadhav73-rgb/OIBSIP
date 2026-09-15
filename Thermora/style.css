@@ -1,0 +1,542 @@
+/* =====================================
+   THERMORA - DESIGN SYSTEM & LAYOUT
+===================================== */
+
+:root {
+    --bg-dark: #0b0f19;
+    --card-bg: #131b2e;
+    --border-color: #232d45;
+    --accent-color: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --danger-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-mark {
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+}
+
+.nav-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0;
+    gap: 2rem;
+}
+
+.eyebrow {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0.5rem 0 1rem;
+}
+
+.hero h1 span {
+    color: var(--accent-color);
+}
+
+.hero p {
+    color: var(--text-secondary);
+    max-width: 480px;
+}
+
+/* TEMPERATURE ORB */
+.temperature-orb {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orb-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed var(--accent-color);
+    animation: rotate 20s linear infinite;
+}
+
+.orb-core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    justify-content: center;
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.orb-core strong {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+/* WORKSPACE & MODE TABS */
+.workspace {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mode-tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.mode-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.mode-tab:hover, .mode-tab.active {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.mode-panel {
+    display: none;
+}
+
+.mode-panel.active {
+    display: block;
+}
+
+/* PANEL HEADINGS */
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.live-badge {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* CONVERSION LAYOUT */
+.conversion-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.input-column, .result-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+input[type="number"] {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: var(--accent-color);
+}
+
+.unit-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.field {
+    flex: 1;
+}
+
+select {
+    width: 100%;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.8rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+.swap-button {
+    background: var(--border-color);
+    border: none;
+    color: var(--text-primary);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.control-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.primary-button {
+    flex: 2;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.secondary-button, .copy-button {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* RESULT COLUMN */
+.result-column {
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    justify-content: center;
+}
+
+.big-result {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    display: none;
+}
+
+/* ALL UNIT RESULTS GRID */
+.unit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.unit-card {
+    background: var(--bg-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.unit-card small {
+    color: var(--text-secondary);
+}
+
+/* COMPARE & ANALYZE PANELS */
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.comparison-result {
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.difference-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.analysis-main {
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.analysis-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.fact {
+    background: var(--bg-dark);
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reference-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: var(--bg-dark);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* FORMULA LAB & HISTORY */
+.formula-card {
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.formula-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.formula-expression {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+.formula-calculation {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.history-item {
+    background: var(--bg-dark);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* VISUAL SCALE SECTION */
+.scale-section {
+    margin-bottom: 3rem;
+}
+
+.temperature-scale {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.scale-gradient {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #3b82f6, #10b981, #f59e0b, #ef4444);
+}
+
+.scale-indicator {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scale-indicator strong {
+    background: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.scale-labels {
+    position: relative;
+    height: 2.5rem;
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.scale-label {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.scale-label-min {
+    transform: translateX(0);
+    text-align: left;
+}
+
+.scale-label-max {
+    transform: translateX(-100%);
+    text-align: right;
+}
+
+.scale-label strong {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+    .scale-labels {
+        height: 3.25rem;
+        font-size: 0.68rem;
+    }
+
+    .scale-label {
+        white-space: normal;
+        width: 78px;
+        line-height: 1.3;
+    }
+
+    .scale-label-min,
+    .scale-label-max {
+        width: 90px;
+    }
+}
+
+/* FEATURES GRID & FOOTER */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.feature-card span {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
