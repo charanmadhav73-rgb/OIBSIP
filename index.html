@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>OIBSIP Projects</title>
+    <title>OIBSIP Projects | Charanmadhav</title>
 
     <style>
         * {
@@ -18,15 +19,12 @@
             background: #f5f7fb;
             color: #172033;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
+            padding: 60px 30px;
         }
 
         .container {
-            max-width: 900px;
-            width: 100%;
+            max-width: 1100px;
+            margin: auto;
             text-align: center;
         }
 
@@ -46,12 +44,12 @@
         .subtitle {
             color: #64748b;
             font-size: 18px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
@@ -61,16 +59,25 @@
             border-radius: 16px;
             border: 1px solid #e2e8f0;
             text-align: left;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.06);
+        }
+
+        .number {
+            color: #6366f1;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .card h2 {
             margin-bottom: 12px;
+            font-size: 23px;
         }
 
         .card p {
             color: #64748b;
             line-height: 1.6;
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -88,18 +95,18 @@
         }
 
         footer {
-            margin-top: 35px;
+            margin-top: 50px;
             color: #94a3b8;
             font-size: 13px;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 900px) {
             .cards {
                 grid-template-columns: 1fr;
             }
 
             h1 {
-                font-size: 36px;
+                font-size: 38px;
             }
         }
     </style>
@@ -113,29 +120,48 @@
             OASIS INFOBYTE • WEB DEVELOPMENT & DESIGNING
         </p>
 
-        <h1>My Projects</h1>
+        <h1>OIBSIP Projects</h1>
 
         <p class="subtitle">
             Welcome to my internship project collection.
         </p>
 
+
         <div class="cards">
 
+            <!-- PROJECT 01 -->
             <div class="card">
-                <h2>Learnova Landing Page</h2>
+
+                <div class="number">
+                    PROJECT 01
+                </div>
+
+                <h2>
+                    Learnova Landing Page
+                </h2>
 
                 <p>
                     A responsive online learning platform landing page
-                    built with HTML5 and CSS3.
+                    designed using HTML5 and CSS3.
                 </p>
 
                 <a class="btn" href="./Learnova/">
-                    View Learnova →
+                    View Project →
                 </a>
+
             </div>
 
+
+            <!-- PROJECT 02 -->
             <div class="card">
-                <h2>Personal Portfolio</h2>
+
+                <div class="number">
+                    PROJECT 02
+                </div>
+
+                <h2>
+                    Personal Portfolio
+                </h2>
 
                 <p>
                     A responsive personal portfolio showcasing my
@@ -143,11 +169,36 @@
                 </p>
 
                 <a class="btn" href="./WebDev-L1-PersonalPortfolio/">
-                    View Portfolio →
+                    View Project →
                 </a>
+
+            </div>
+
+
+            <!-- PROJECT 03 -->
+            <div class="card">
+
+                <div class="number">
+                    PROJECT 03
+                </div>
+
+                <h2>
+                    THERMORA
+                </h2>
+
+                <p>
+                    A temperature intelligence workspace for converting,
+                    comparing and analyzing temperature values.
+                </p>
+
+                <a class="btn" href="./Thermora/">
+                    View Project →
+                </a>
+
             </div>
 
         </div>
+
 
         <footer>
             © 2026 Kallagunta Charanmadhav
@@ -156,4 +207,5 @@
     </div>
 
 </body>
+
 </html>
